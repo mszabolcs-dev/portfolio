@@ -124,13 +124,23 @@ export default {
         certCiscoItems: [
           {
             name:'Introduction to Networks',
-            certName: require('@/assets/network/cert/imgs/IntrodCertificate.jpg'),
+            certName: require('@/assets/network/cert/imgs/introCertificate.jpg'),
             letterName: require('@/assets/network/letter/imgs/introdLetter.jpg')
           },
           {
-            name:'ASd',
+            name:'Connecting Networks',
             certName: require('@/assets/network/cert/imgs/connCertificate.jpg'),
-            letterName: require('@/assets/network/cert/imgs/connCertificate.jpg')
+            letterName: require('@/assets/network/letter/imgs/connLetter.jpg')
+          },
+          {
+            name:'Scaling Networks',
+            certName: require('@/assets/network/cert/imgs/scalingCertificate.jpg'),
+            letterName: require('@/assets/network/letter/imgs/scalingLetter.jpg')
+          },
+          {
+            name:'Routing and Switching Essentials',
+            certName: require('@/assets/network/cert/imgs/routingNSwitchingCertificate.jpg'),
+            letterName: require('@/assets/network/letter/imgs/routingNSwitchingLetter.jpg')
           },
 
         ]

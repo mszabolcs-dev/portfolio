@@ -33,7 +33,6 @@
           </v-card-title>
           <v-divider></v-divider>
           <v-card-text>
-            <pdf src="@/assets/network/cert/SzabolcsMeszaros-Introd_2018-certificate.pdf"></pdf>
             <v-img @click="openFile()" :src="certInfo.certName"></v-img>
           </v-card-text>
         </v-card>
@@ -57,7 +56,7 @@
 </template>
 
 <script>
-import pdf from 'vue-pdf'
+//import pdf from 'vue-pdf'
 export default {
   name:'ciscoDialog',
   props: {
@@ -66,24 +65,11 @@ export default {
     }
   },
   components: {
-    pdf
+    //pdf
   },
   data () {
     return {
       dialog: false,
-      certCiscoItems: [
-          {
-            name:'Introduction to Networks',
-            certName: require('@/assets/network/cert/imgs/IntrodCertificate.jpg'),
-            letterName: require('@/assets/network/letter/imgs/introdLetter.jpg')
-          },
-          {
-            name:'ASd',
-            certName: require('@/assets/network/cert/imgs/connCertificate.jpg'),
-            letterName: require('@/assets/network/cert/imgs/connCertificate.jpg')
-          },
-
-        ]
     }
   },
   methods: {
