@@ -12,15 +12,13 @@ export default new Vuex.Store({
   },
   mutations: {
     setDrawerStatus (state, status) {
-      console.log(status)
       state.drawerStatus = status
     }
   },
   actions: {
     setDrawerStatus ({commit}, status) {
-      console.log(status)
       commit('setDrawerStatus', status)
-    }
+    },
   },
   modules: {
   }

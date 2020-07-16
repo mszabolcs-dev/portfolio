@@ -37,7 +37,7 @@
 export default {
   data: () => ({
     snackbar: true,
-    text: 'Hello, I\'m a snackbar',
+    text: 'Hello, I\'m a snackbar and this site is under development.',
   })
 }
 </script>

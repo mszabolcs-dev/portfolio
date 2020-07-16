@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import store from '../store/index.js'
+
 import Home from '../views/Home.vue'
 import Dusty from '../views/works/Dusty'
 import SmartMirror from '../views/works/SmartMirror'
@@ -42,6 +44,15 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
+})
+
+
+router.beforeEach((to, from, next) => {
+  if (to.name !== 'Dusty' && to.name !== 'SmartMirror' && to.name !== 'ThisWebsite') {
+    store.dispatch('setDrawerStatus', false)
+    next()
+  }
+  else next()
 })
 
 export default router

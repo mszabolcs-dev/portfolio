@@ -76,13 +76,40 @@
             class="mx-auto"
             max-width="344"
             outlined
-            height="500px"
+            height="400px"
           >
             <v-list-item three-line>
               <v-list-item-content>
-                <div class="overline mb-4">OVERLINE</div>
-                <v-list-item-title class="headline mb-1">Headline 5</v-list-item-title>
-                <v-list-item-subtitle>Greyhound divisely hello coldly fonwderfully</v-list-item-subtitle>
+                <v-list-item-title class="headline mb-1">How can you contact me?</v-list-item-title>
+                <div class="overline mb-1">There's plenty way...</div>
+                <v-list-item-subtitle>like...</v-list-item-subtitle>
+
+                <v-btn @click="openURL('https://discord.com/channels/@me/226777778551390208')" class="mb-3 mt-3" style="background: #7289da;" height="45px" max-width="170px"> <!-- #7289da -->
+                  <v-img class="icon" contain height="35px" width="35px" src="../assets/icons/discord_icon_white.png"></v-img>
+                  <span class="ml-3 mr-1 white--text">Gartou#6911</span>
+                </v-btn>
+
+                <v-spacer></v-spacer>
+
+                <v-btn @click="openURL('https://t.me/gartou')" class="mb-3 mt-3 grey darken-3" height="45px" max-width="170px"> <!-- #7289da -->
+                    <v-img class="icon" contain height="35px" width="35px" src="../assets/icons/telegram_icon.png"></v-img>
+                    <span class="ml-3 mr-9 white--text">@Gartou</span>
+                </v-btn>
+
+                <v-spacer></v-spacer>
+
+
+                <v-btn :href="`mailto:${protonMail}`" class="mb-3 mt-3" style="background-color: #8a90c7;" height="45px" max-width="170px"> <!-- #7289da -->
+                    <v-img class="icon" contain height="35px" width="35px" src="../assets/icons/protonmail-sign-dark.png"></v-img>
+                    <span class="ml-4 mr-2 white--text">szabolcsm@</span>                
+                </v-btn>
+
+                <v-spacer></v-spacer>
+
+                <v-btn :href="`mailto:${outlook}`" class="mb-3 mt-3" style="background-color: #8a90c7;" height="45px" max-width="170px"> <!-- #7289da -->
+                    <v-img class="icon" contain height="35px" width="35px" src="../assets/icons/outlook_icon.png"></v-img>
+                    <span class="ml-4 mr-2 white--text">mszabolcs@</span>                
+                </v-btn>
               </v-list-item-content>
             </v-list-item>
           </v-card>
@@ -110,13 +137,31 @@ export default {
     data: () => ({
       alignment: 'center',
       justify: 'center',
-      imText: 'I\'m a dual student working at IBM at my last semester. Developed a couple of websites and applications outside of the organisation. If you want to know more about me click at About Me at the top or if you want to see my previous works click at Works.'
+      imText: 'I\'m a dual student working at IBM at my last semester. Developed a couple of websites and applications outside of the organisation. If you want to know more about me click at About Me at the top or if you want to see my previous works click at Works.',
+      protonMail: 'szabolcsm@protonmail.com',
+      outlook: 'mszabolcs@outlook.com'
     }),
 
   methods: {
+    openURL(url) {
+       window.open(url,'_blank')
+    },
     callColor() {
       
     }
   }
   }
 </script>
+
+<style scoped>
+.icon {
+  border-radius: 50%;
+  -webkit-transition: -webkit-transform 0.8s ease-in-out;
+          transition: transform 0.8s ease-in-out;
+}
+
+.icon:hover {
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+</style>

@@ -11,7 +11,7 @@
 
 
         <v-btn :class="colorChangingClass" text @click="navigateTo('/about')">About Me</v-btn>
-        <v-btn :class="colorChangingClass" text @click="drawer = !drawer">Works</v-btn>
+        <v-btn :class="colorChangingClass" text @click="drawerStatus=!drawer">Works</v-btn>
 
         <v-spacer></v-spacer>
         
@@ -30,12 +30,17 @@
             <v-icon>mdi-github</v-icon>
         </v-btn>
         </a>
+        <a href="https://gitlab.com/gartou" target="_blank">
+        <v-btn icon>
+            <v-icon>mdi-gitlab</v-icon>
+        </v-btn>
+        </a>
 
       </v-app-bar>
 
       <v-navigation-drawer
         disable-resize-watcher
-        v-model="drawer"
+        v-model="drawerStatus"
         app
         permament
         class="cyan"
@@ -114,7 +119,7 @@ export default {
   },
   data() {
       return {
-        drawer: false,
+        drawer: this.$store.state.drawerStatus,
         workDisplayed: "Previous Works",
         colorChangingClass: "black--text",
         colors: ["red--text", "red darken-4--text", "pink lighten-1--text", "purple darken-3", "deep-purple darken-2", "indigo lighten-1", "blue darken-3", "light-blue darken-1", "cyan lighten-1", "green--text darken-1"],
@@ -125,22 +130,30 @@ export default {
           {
             name:'Introduction to Networks',
             certName: require('@/assets/network/cert/imgs/introCertificate.jpg'),
-            letterName: require('@/assets/network/letter/imgs/introdLetter.jpg')
+            letterName: require('@/assets/network/letter/imgs/introdLetter.jpg'),
+            pdfCert: 'network/cert/SzabolcsMeszaros-Introd-certificate.pdf',
+            pdfLetter: 'network/letter/SzabolcsMeszaros-Introd-letter.pdf'
           },
           {
             name:'Connecting Networks',
             certName: require('@/assets/network/cert/imgs/connCertificate.jpg'),
-            letterName: require('@/assets/network/letter/imgs/connLetter.jpg')
+            letterName: require('@/assets/network/letter/imgs/connLetter.jpg'),
+            pdfCert: 'network/cert/SzabolcsMeszaros-Conn-certificate.pdf',
+            pdfLetter: 'network/letter/SzabolcsMeszaros-Conn-letter.pdf'
           },
           {
             name:'Scaling Networks',
             certName: require('@/assets/network/cert/imgs/scalingCertificate.jpg'),
-            letterName: require('@/assets/network/letter/imgs/scalingLetter.jpg')
+            letterName: require('@/assets/network/letter/imgs/scalingLetter.jpg'),
+            pdfCert: 'network/cert/SzabolcsMeszaros-Scaling-certificate.pdf',
+            pdfLetter: 'network/letter/SzabolcsMeszaros-Scaling-letter.pdf'
           },
           {
             name:'Routing and Switching Essentials',
             certName: require('@/assets/network/cert/imgs/routingNSwitchingCertificate.jpg'),
-            letterName: require('@/assets/network/letter/imgs/routingNSwitchingLetter.jpg')
+            letterName: require('@/assets/network/letter/imgs/routingNSwitchingLetter.jpg'),
+            pdfCert: 'network/cert/SzabolcsMeszaros-Routing-certificate.pdf',
+            pdfLetter: 'network/letter/SzabolcsMeszaros-Routing-letter.pdf'
           },
 
         ]
@@ -157,6 +170,17 @@ export default {
     returnImg(item) {
       console.log(`${this.networkCertPath}imgs/${item.cert_name}.jpg`)
       return require(`../assets/network/cert/imgs/${item.cert_name}.jpg`)
+    }
+  },
+  computed: {
+    drawerStatus: {
+      get() {
+        return this.$store.state.drawerStatus
+      },
+      set(status) {
+        this.$store.dispatch('setDrawerStatus',status)
+        this.drawer = status
+      }
     }
   }
     

@@ -33,7 +33,12 @@
           </v-card-title>
           <v-divider></v-divider>
           <v-card-text>
-            <v-img @click="openFile()" :src="certInfo.certName"></v-img>
+            <v-tooltip top>
+            <template v-slot:activator='{on}'>
+              <v-img v-on='on' @click="openFile(certInfo.pdfCert)" :src="certInfo.certName"></v-img>
+            </template>
+            <span>Click to open pdf</span>
+            </v-tooltip>
           </v-card-text>
         </v-card>
       </v-col>
@@ -45,7 +50,12 @@
           </v-card-title>
           <v-divider></v-divider>
           <v-card-text>
-            <v-img @click="openFile()" :src="certInfo.letterName"></v-img>
+            <v-tooltip top>
+            <template v-slot:activator='{on}'>
+              <v-img v-on='on' @click="openFile(certInfo.pdfLetter)" :src="certInfo.letterName"></v-img>
+            </template>
+            <span>Click to open pdf</span>
+            </v-tooltip>
           </v-card-text>
         </v-card>
       </v-col>
@@ -73,8 +83,9 @@ export default {
     }
   },
   methods: {
-    openFile() {
-      window.open('','_blank')
+    openFile(pdfSrc) {
+      //<embed src="network/cert/SzabolcsMeszaros-Conn-certificate.pdf" type="application/pdf" width="100%" height="1000px" />
+      window.open(pdfSrc,'_blank')
     },
   }
 }
