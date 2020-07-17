@@ -63,9 +63,34 @@
           >
             <v-list-item three-line>
               <v-list-item-content>
-                <div class="overline mb-4">OVERLINE</div>
-                <v-list-item-title class="headline mb-1">Headline 5</v-list-item-title>
-                <v-list-item-subtitle>Greyhound divisely hello coldly fonwderfully</v-list-item-subtitle>
+                <v-list-item-title class="headline mb-1">My previous works</v-list-item-title>
+                <div class="overline mb-1">Most of them are in a git repo</div>
+                <v-list-item-subtitle>like...</v-list-item-subtitle>
+                
+                <v-card max-width="160" class="black">
+                 <v-list-item>
+                  <v-list-item-avatar><v-img class="icon_rotate" contain height="35px" width="35px" src="../assets/icons/GitHub-Mark-Light.png"></v-img></v-list-item-avatar>
+                  <v-img contain height="35px" width="35px" src="../assets/icons/GitHub_Logo_White.png"></v-img>
+                </v-list-item>
+
+                </v-card>
+
+
+                <v-btn @click="openURL('https://github.com/gartou')" class="mb-3 mt-3" style="background: black;" height="45px" max-width="300px"> <!-- #7289da -->
+                  <v-img class="icon_rotate" contain height="35px" width="35px" src="../assets/icons/GitHub-Mark-Light.png"></v-img>
+                  <v-img contain height="35px" width="35px" src="../assets/icons/GitHub_Logo_White.png"></v-img>
+                  <span class="ml-3 mr-1 white--text">Gartou</span>
+                </v-btn>
+
+                <v-spacer></v-spacer>
+
+                <v-btn @click="openURL('https://github.com/gartou')" class="mb-3 mt-3" style="background: white;" height="45px" max-width="300px"> <!-- #7289da -->
+                  <v-img class="icon_rotate" contain height="35px" width="35px" src="../assets/icons/gitlab-logo-gray-rgb.png"></v-img>
+                  <span class="ml-3 mr-1 grey--text">Gartou</span>
+                </v-btn>
+
+                <v-spacer></v-spacer>
+
               </v-list-item-content>
             </v-list-item>
           </v-card>
@@ -85,14 +110,14 @@
                 <v-list-item-subtitle>like...</v-list-item-subtitle>
 
                 <v-btn @click="openURL('https://discord.com/channels/@me/226777778551390208')" class="mb-3 mt-3" style="background: #7289da;" height="45px" max-width="170px"> <!-- #7289da -->
-                  <v-img class="icon" contain height="35px" width="35px" src="../assets/icons/discord_icon_white.png"></v-img>
+                  <v-img class="icon_rotate" contain height="35px" width="35px" src="../assets/icons/discord_icon_white.png"></v-img>
                   <span class="ml-3 mr-1 white--text">Gartou#6911</span>
                 </v-btn>
 
                 <v-spacer></v-spacer>
 
                 <v-btn @click="openURL('https://t.me/gartou')" class="mb-3 mt-3 grey darken-3" height="45px" max-width="170px"> <!-- #7289da -->
-                    <v-img class="icon" contain height="35px" width="35px" src="../assets/icons/telegram_icon.png"></v-img>
+                    <v-img class="icon_rotate" contain height="35px" width="35px" src="../assets/icons/telegram_icon.png"></v-img>
                     <span class="ml-3 mr-9 white--text">@Gartou</span>
                 </v-btn>
 
@@ -100,14 +125,14 @@
 
 
                 <v-btn :href="`mailto:${protonMail}`" class="mb-3 mt-3" style="background-color: #8a90c7;" height="45px" max-width="170px"> <!-- #7289da -->
-                    <v-img class="icon" contain height="35px" width="35px" src="../assets/icons/protonmail-sign-dark.png"></v-img>
+                    <v-img class="icon_rotate" contain height="35px" width="35px" src="../assets/icons/protonmail-sign-dark.png"></v-img>
                     <span class="ml-4 mr-2 white--text">szabolcsm@</span>                
                 </v-btn>
 
                 <v-spacer></v-spacer>
 
                 <v-btn :href="`mailto:${outlook}`" class="mb-3 mt-3" style="background-color: #8a90c7;" height="45px" max-width="170px"> <!-- #7289da -->
-                    <v-img class="icon" contain height="35px" width="35px" src="../assets/icons/outlook_icon.png"></v-img>
+                    <v-img class="icon_rotate" contain height="35px" width="35px" src="../assets/icons/outlook_icon.png"></v-img>
                     <span class="ml-4 mr-2 white--text">mszabolcs@</span>                
                 </v-btn>
               </v-list-item-content>
@@ -154,13 +179,13 @@ export default {
 </script>
 
 <style scoped>
-.icon {
+.icon_rotate {
   border-radius: 50%;
   -webkit-transition: -webkit-transform 0.8s ease-in-out;
           transition: transform 0.8s ease-in-out;
 }
 
-.icon:hover {
+.icon_rotate:hover {
   -webkit-transform: rotate(360deg);
           transform: rotate(360deg);
 }
