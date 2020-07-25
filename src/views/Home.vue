@@ -68,11 +68,10 @@
                 <v-list-item-subtitle>like...</v-list-item-subtitle>
                 
                 <v-card max-width="160" class="black">
-                 <v-list-item>
-                  <v-list-item-avatar><v-img class="icon_rotate" contain height="35px" width="35px" src="../assets/icons/GitHub-Mark-Light.png"></v-img></v-list-item-avatar>
-                  <v-img contain height="35px" width="35px" src="../assets/icons/GitHub_Logo_White.png"></v-img>
-                </v-list-item>
-
+                  <v-list-item>
+                    <v-list-item-avatar><v-img class="icon_rotate" contain height="35px" width="35px" src="../assets/icons/GitHub-Mark-Light.png"></v-img></v-list-item-avatar>
+                    <div class="white--text font-weight-bold headline">GitHub</div>
+                  </v-list-item>
                 </v-card>
 
 
